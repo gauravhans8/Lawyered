@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html>
+
+<head>
+<title>home</title>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="{% static 'lawyered/layout.css' %}" />
+
+<link href="{%static 'lawyered/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+
+
+</head>
+
+<body id="top">
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+   
+    <div class="fl_left">
+      <ul>
+        <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+      </ul>
+    </div>
+    <div class="fl_right">
+      <ul>
+      <span class="user">
+        <li><a href="#"><i class="fa fa-lg fa-home"></i></a></li>
+        {% if request.user.is_authenticated %}
+		<li><a href="{% url "lawyered:logout" %}">Logout</a></li>
+		{% else %}
+		<li><a href="{% url "lawyered:login" %}">Login</a></li>
+		<li><a href="{% url "lawyered:register" %}">register</a></li>
+		{% endif %}
+		</span>
+
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+
+<div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <div id="logo"> 
+        <!-- ################################################################################################ -->
+        <h1><a href="{% url "lawyered:index" %}">Lawyered</a></h1>
+        <!-- <p>Nullam consequat laoreet</p> -->
+        <!-- ################################################################################################ -->
+      </div>
+      <nav id="mainav" class="clear"> 
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+          <li class="active"><a href="{% url "lawyered:index" %}">Home</a></li>
+              <li><a href="#">How it Works?</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#footer">Contact Us</a></li>
+      <!--<li><a href="#">Long Link Text</a></li>-->
+  </ul>
+  <!-- ################################################################################################ -->
+</nav>
+</header>
+</div>
+<div class="bgded overlay" style="background-image:url('{% static 'lawyered/images/demo/backgrounds/panel1.jpg' %}');">
+  <div id="pageintro" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        <li>
+          <article>
+            <h3 class="heading">Find A Lawyer or Ask for Free. Now!</h3>
+            <p>Easiest way to get legal help</p>
+            <footer>
+              <ul class="nospace inline pushright">
+                <li><a class="btn" href="#">Search</a></li>
+                <li><a class="btn inverse" href="#">Forums</a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3 class="heading">Build your online legal career</h3> 
+            <p>Best way to start or expand your user base</p>
+            <footer>
+              <ul class="nospace inline pushright">
+                <li><a class="btn" href="#">Sign Up</a></li>
+                <li><a class="btn inverse" href="#">Help for free</a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        
+  </ul>
+</div>
+<!-- ################################################################################################ -->
+</div>
+</div>
+<div class="wrapper bgded overlay" style="background-image:url('{% static 'lawyered/images/demo/backgrounds/message.jpg' %}');">
+  <div id="cta" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <article>
+      <h2 class="heading">Forums</h2>
+      <p>Seek Legal Advice From The Best Lawyers of The Country</p>
+      <p>Post A question on the forum and get your queries solved in minutes</p>
+      <footer><a class="btn inverse" href="#">Visit Forums</a></footer>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<div class="wrapper bgded overlay" style="background-image:url('{% static 'lawyered/images/demo/backgrounds/back2.jpg' %}');">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        <div class="sectiontitle">
+          <h6 class="heading">Top Rated Lawyers</h6>
+          <p>Most Active lawyers</p>
+          <p>Get Quote and Set Appointments with best lawyers near you</p>
+        </div>
+        <div class="group latest">
+          <article class="one_third first">
+            <figure><a href="#"><img src="{% static 'lawyered/images/demo/backgrounds/lawyer1.jpg' %}" alt=""></a>
+              <!--<figcaption>
+                <time datetime="2045-04-06T08:15+00:00"><strong>06</strong> <em>Apr</em></time>
+              </figcaption>-->
+            </figure>
+            <div class="txtwrap">
+              <h4 class="heading">Mr. Rakesh Menon</h4>
+              <ul class="nospace meta">
+                <li>Criminal Lawyer</li>
+              </ul>
+              <p>An Experienced Criminal Lawyer who has worked in top law firms of the country and put perpetrators behind bars</p>
+              <footer><a href="#">Read More &raquo;</a></footer>
+            </div>
+          </article>
+          <article class="one_third">
+            <figure><a href="#"><img src="{% static 'lawyered/images/demo/backgrounds/lawyer2.jpg' %}" alt=""></a>
+              <!--<figcaption>
+                <time datetime="2045-04-05T08:15+00:00"><strong>05</strong> <em>Apr</em></time>
+              </figcaption>-->
+            </figure>
+            <div class="txtwrap">
+              <h4 class="heading">Mrs. Neeta Mukherjee</h4>
+              <ul class="nospace meta">
+                <!--<li>by <a href="#">Admin</a></li>
+                <li>in <a href="#">Category Name</a></li>-->
+                <li>Family Lawyer</li>
+              </ul>
+              <p>A profound family lawyer who has helped families to resolve their cases and provided justice to the one who deserved it</p>
+              <footer><a href="#">Read More &raquo;</a></footer>
+            </div>
+          </article>
+          <article class="one_third">
+            <figure><a href="#"><img src="{% static 'lawyered/images/demo/backgrounds/lawyer3.jpg' %}" alt=""></a>
+              <!--<figcaption>
+                <time datetime="2045-04-04T08:15+00:00"><strong>04</strong> <em>Apr</em></time>
+              </figcaption>-->
+            </figure>
+            <div class="txtwrap">
+              <h4 class="heading">Mr. Alok Singh</h4>
+              <ul class="nospace meta">
+                <!--<li>by <a href="#">Admin</a></li>
+                <li>in <a href="#">Category Name</a></li>-->
+                <li>Tax Lawyer</li>
+              </ul>
+              <p>A highly acclaimed lawyer who has managed fame in a few years by helping clients resolve their tax issues and also evade tax</p>
+              <footer><a href="#">Read More &raquo;</a></footer>
+            </div>
+          </article>
+        </div>
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_third first">
+      <h6 class="heading">Follow Us</h6>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Reach Us At</h6>
+      <ul class="nospace linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+            The LNMIIT, Jaipur, Rajasthan - 302031
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +91 987 456 0734</li>
+        <li><i class="fa fa-envelope-o"></i> feedback@lawyered.com</li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Ask Queries</h6>
+      <form method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Name">
+          <input class="btmspace-15" type="text" value="" placeholder="Email">
+          <button type="submit" value="submit">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+  </footer>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="{%static 'lawyered/jquery.min.js' %}"></script>
+<script src="{%static 'lawyered/jquery.backtotop.js' %}"></script>
+<script src="{%static 'lawyered/jquery.mobilemenu.js' %}"></script>
+<script src="{%static 'lawyered/jquery.flexslider-min.js' %}"></script>
+</body>
+
+</html>
