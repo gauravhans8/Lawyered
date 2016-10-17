@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
-from .forms import LoginForm, UserRegistrationForm, divorceForm
+from .forms import LoginForm, UserRegistrationForm, divorceForm, duiForm, criminalForm, prenupForm, mergerForm, estateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 from .models import person
