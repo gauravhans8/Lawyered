@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^dashboard/$',views.dashboard,name='dashboard'),
 	url(r'^search/$', views.person_list, name='search'), 
 	url(r'^divorce/$', views.divorce, name='divorce'),
+	
 
 ]
 #url(r'^$', views.dashboard, name='dashboard'),url(r'^logout-then-login/$','django.contrib.auth.views.logout_then_login',name='logout_then_login'),url(r'^login/$', views.user_login,name='login'),
