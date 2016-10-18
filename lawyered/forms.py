@@ -13,11 +13,12 @@ class UserRegistrationForm(forms.ModelForm):
         model = User
         fields = ('username', 'first_name', 'email')
         
-        def clean_password2(self):
-            cd = self.cleaned_data
-            if cd['password'] != cd['password2']:
-                raise forms.ValidationError('Passwords don\'t match.')
-            return cd['password2']
+    def clean_password2(self):
+        password1 = self.cleaned_data.get('password')
+        password_confirm = self.cleaned_data.get('password2')
+        if password1 and password1 != password_confirm:
+            raise forms.ValidationError('Passwords don\'t match.')
+        return cd['password2']
 
 class SearchForm(forms.Form):
     query = forms.CharField()
